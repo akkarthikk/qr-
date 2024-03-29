@@ -16,6 +16,7 @@ app.get("/", (req, res) => {
 });
 app.get("/generateQRCode", (req, res) => {
   const url = req.query.url;
+  console.log(url);
   const qr_svg = qr.image(url, { type: 'png' });
   res.type('png');
   qr_svg.pipe(res);
